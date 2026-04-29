@@ -1,5 +1,4 @@
 const dictionary = {
-  // Core words
   "i": "meep",
   "you": "yo",
   "sus": "shade",
@@ -9,27 +8,16 @@ const dictionary = {
   "safe": "clean",
   "die": "ghost",
   "died": "ghost",
-
-  // Phrases
-  "emergency meeting": "big ping",
-  "call emergency meeting": "big ping now",
-  "let's vote": "big ping now",
-
-  // Basic chat
   "yes": "yeep",
   "no": "nopeep",
   "where": "whop?",
   "who": "whop yo?",
-
-  // Ghost mode
   "ghost": "shadeform",
   "see": "echo-see",
   "talk": "whisperlink",
   "move": "floatstep",
   "follow": "trailghost",
   "watch": "scanfade",
-
-  // Game terms
   "task": "fixbit",
   "sabotage": "glitch"
 };
