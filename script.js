@@ -32,7 +32,9 @@ function translateText() {
     "let's vote": "big ping now",
     "sabotaged reactor": "reactor glitch",
     "sabotaged o2": "o2 glitch",
-    "hello": "meep hello"
+    "hello": "meep hello",
+    "hi": "meep hipeep",
+    "hey": "meep heypeep"
   };
 
   for (let phrase in phrases) {
