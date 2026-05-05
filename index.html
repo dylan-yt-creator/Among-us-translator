@@ -9,6 +9,15 @@
 
   <h1>My Custom Among Us Translator</h1>
 
+  <div class="controls">
+    <button onclick="toggleDirection()">🔁 Switch Direction</button>
+    <button onclick="setTheme('light')">☀️</button>
+    <button onclick="setTheme('dark')">🌙</button>
+    <button onclick="setTheme('system')">🌗</button>
+  </div>
+
+  <p id="modeLabel">Mode: English → Among Us</p>
+
   <textarea id="inputText" placeholder="Enter text..."></textarea>
 
   <button onclick="translateText()">Translate</button>
