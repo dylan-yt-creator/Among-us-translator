@@ -24,7 +24,9 @@ const dictionary = {
   "task": "fixbit",
   "sabotage": "glitch",
   "how": "moda",
-  "are": "ar"
+  "are": "ar",
+  "Kyle": "Ky",
+  "Dylan": "Killer"
 };
 
 // Reverse dictionary
