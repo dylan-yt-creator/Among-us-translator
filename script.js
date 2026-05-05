@@ -20,6 +20,8 @@ const dictionary = {
   "watch": "scanfade",
   "task": "fixbit",
   "sabotage": "glitch"
+  "how": "moda"
+  "are" "ar"
 };
 
 function translateText() {
