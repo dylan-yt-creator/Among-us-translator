@@ -25,7 +25,7 @@ const dictionary = {
   "sabotage": "glitch",
   "how": "moda",
   "are": "ar",
-  "Kyle": "ky",
+  "kyle": "ky",
   "dylan": "killer",
   "teaming": "gangering"
 };
