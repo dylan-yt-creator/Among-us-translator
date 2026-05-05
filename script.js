@@ -57,12 +57,13 @@ const reversePhrases = Object.fromEntries(
 // =========================
 let typingTimer;
 
-function handleInput() {
+document.getElementById("inputText").addEventListener("input", () => {
   clearTimeout(typingTimer);
+
   typingTimer = setTimeout(() => {
     translateText();
   }, 150);
-}
+});
 
 // =========================
 // TRANSLATION
@@ -137,3 +138,7 @@ function applyTheme(theme) {
 // Load theme on startup
 const savedTheme = localStorage.getItem("theme") || "system";
 applyTheme(savedTheme);
+
+document.getElementById("inputText").addEventListener("input", () => {
+  translateText();
+});
