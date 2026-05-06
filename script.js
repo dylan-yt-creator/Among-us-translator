@@ -1,5 +1,5 @@
 // =========================
-// DICTIONARY
+// 1. DICTIONARY (WORD MAP)
 // =========================
 const dictionary = {
   "i": "meep",
@@ -32,15 +32,16 @@ const dictionary = {
   "bad": "null"
 };
 
-// Reverse dictionary
+// Reverse dictionary (auto)
 const reverseDictionary = Object.fromEntries(
   Object.entries(dictionary).map(([key, value]) => [value, key])
 );
 
 let isReversed = false;
 
+
 // =========================
-// PHRASES
+// 2. PHRASES (MULTI-WORD)
 // =========================
 const phrases = {
   "emergency meeting": "big ping",
@@ -57,49 +58,69 @@ const reversePhrases = Object.fromEntries(
   Object.entries(phrases).map(([k, v]) => [v, k])
 );
 
+
 // =========================
-// AUTO TRANSLATE (DEBOUNCE)
+// 3. AUTO TRANSLATE SETUP
 // =========================
 let typingTimer;
 
-document.getElementById("inputText").addEventListener("input", () => {
-  clearTimeout(typingTimer);
+window.onload = () => {
+  const inputEl = document.getElementById("inputText");
 
-  typingTimer = setTimeout(() => {
-    translateText();
-  }, 150);
-});
+  inputEl.addEventListener("input", () => {
+    clearTimeout(typingTimer);
+
+    typingTimer = setTimeout(() => {
+      translateText();
+    }, 150);
+  });
+};
+
 
 // =========================
-// TRANSLATION
+// 4. TRANSLATION FUNCTION
 // =========================
 function translateText() {
-  let input = document.getElementById("inputText").value.toLowerCase();
+  let input = document.getElementById("inputText").value;
 
-  // Phrase replacement
-  if (!isReversed) {
-    for (let phrase in phrases) {
-      input = input.replaceAll(phrase, phrases[phrase]);
-    }
-  } else {
-    for (let phrase in reversePhrases) {
-      input = input.replaceAll(phrase, reversePhrases[phrase]);
-    }
+  const phraseDict = isReversed ? reversePhrases : phrases;
+
+  // Phrase replacement (case-insensitive)
+  for (let phrase in phraseDict) {
+    const regex = new RegExp(phrase, "gi");
+    input = input.replace(regex, phraseDict[phrase]);
   }
 
-  // Word translation
   const dict = isReversed ? reverseDictionary : dictionary;
 
   const translated = input
     .split(" ")
-    .map(word => dict[word] || word)
+    .map(word => {
+      const lower = word.toLowerCase();
+
+      let translatedWord = dict[lower] || word;
+
+      // Preserve ALL CAPS
+      if (word === word.toUpperCase()) {
+        return translatedWord.toUpperCase();
+      }
+
+      // Preserve Capitalized (Names like Dylan)
+      if (word[0] === word[0]?.toUpperCase()) {
+        return translatedWord.charAt(0).toUpperCase() + translatedWord.slice(1);
+      }
+
+      return translatedWord;
+    })
     .join(" ");
 
-  document.getElementById("outputText").innerText = translated;
+  // IMPORTANT: using textarea → .value
+  document.getElementById("outputText").value = translated;
 }
 
+
 // =========================
-// TOGGLE DIRECTION + SWAP
+// 5. TOGGLE DIRECTION + SWAP
 // =========================
 function toggleDirection() {
   const inputEl = document.getElementById("inputText");
@@ -107,8 +128,8 @@ function toggleDirection() {
 
   // Swap text
   const temp = inputEl.value;
-  inputEl.value = outputEl.innerText;
-  outputEl.innerText = temp;
+  inputEl.value = outputEl.value;
+  outputEl.value = temp;
 
   // Flip direction
   isReversed = !isReversed;
@@ -116,12 +137,12 @@ function toggleDirection() {
   document.getElementById("modeLabel").innerText =
     isReversed ? "Mode: Among Us → English" : "Mode: English → Among Us";
 
-  // Re-translate instantly
   translateText();
 }
 
+
 // =========================
-// THEME SYSTEM
+// 6. THEME SYSTEM
 // =========================
 function setTheme(theme) {
   localStorage.setItem("theme", theme);
@@ -134,16 +155,11 @@ function applyTheme(theme) {
   } else if (theme === "light") {
     document.body.classList.remove("dark");
   } else {
-    // system
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     document.body.classList.toggle("dark", prefersDark);
   }
 }
 
-// Load theme on startup
+// Load saved theme
 const savedTheme = localStorage.getItem("theme") || "system";
 applyTheme(savedTheme);
-
-document.getElementById("inputText").addEventListener("input", () => {
-  translateText();
-});
