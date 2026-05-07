@@ -32,7 +32,9 @@ textarea {
   box-sizing: border-box;
 }
 
-
+button {
+  font-family: "AmongUsFont", Arial, sans-serif;
+}
 
 button {
   padding: 10px;
