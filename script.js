@@ -178,8 +178,8 @@ function speakText() {
   const speech = new SpeechSynthesisUtterance(text);
 
   // optional settings
-  speech.lang = "en-US";
-  speech.rate = 1;   // speed
+  speech.lang = "en-UK";
+  speech.rate = 0.5;   // speed
   speech.pitch = 1;  // tone
 
   window.speechSynthesis.speak(speech);
