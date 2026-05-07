@@ -1,15 +1,11 @@
-// =========================
-// CUSTOM FONT
-// =========================
+
 @font-face {
   font-family: "AmongUsFont";
   src: url("In%20your%20face,%20joffrey!.ttf") format("truetype");
 }
 
 
-// =========================
-// MAIN PAGE
-// =========================
+
 body {
   font-family: "AmongUsFont", Arial, sans-serif;
   max-width: 600px;
@@ -21,9 +17,7 @@ body {
 }
 
 
-// =========================
-// TEXT BOXES
-// =========================
+
 textarea {
   width: 100%;
   height: 100px;
@@ -32,9 +26,7 @@ textarea {
 }
 
 
-// =========================
-// BUTTONS
-// =========================
+
 button {
   padding: 10px;
   cursor: pointer;
@@ -42,17 +34,13 @@ button {
 }
 
 
-// =========================
-// TOP CONTROLS
-// =========================
+
 .controls {
   margin-bottom: 10px;
 }
 
 
-// =========================
-// DARK MODE
-// =========================
+
 body.dark {
   background: #121212;
   color: #ffffff;
