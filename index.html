@@ -7,7 +7,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  
+  <div class="stars"></div>
+  
+  <div class="info-panel">
+      <p>⚡ Translator Status: ONLINE</p>
+      <p id="charCount">Characters: 0</p>
+  </div>
+  
+  <div class="tips">
+      <h3>Random Sus Message</h3>
+      <p id="susMessage">"Red is kinda sus..."</p>
+      <button onclick="newSusMessage()">NEW MESSAGE</button>
+  </div>
+  
   <h1>My Custom Among Us Translator</h1>
 
   <div class="controls">
@@ -23,7 +36,8 @@
   
   <h2>Output:</h2>
   <textarea id="outputText" readonly></textarea>
-  <button onclick="speakText()">🔊 Read</button>
+    <button onclick="copyOutput()">📋 COPY</button>
+    <button onclick="speakOutput()">🔊 READ</button>
   
   <script src="script.js"></script>
 </body>
