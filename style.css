@@ -1,3 +1,69 @@
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+textarea:focus {
+    box-shadow: 0 0 15px cyan;
+}
+
+textarea {
+    transition: 0.3s;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #00ffff55;
+    }
+    to {
+        box-shadow: 0 0 20px #00ffffaa;
+    }
+}
+
+/* Tips section */
+.tips {
+    margin-top: 25px;
+    padding: 15px;
+    border: 2px solid #666;
+    background: rgba(255,255,255,0.03);
+    width: 300px;
+    animation: glow 2s infinite alternate;
+}
+
+/* Info panel */
+.info-panel {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #555;
+    background: rgba(255,255,255,0.05);
+    width: fit-content;
+    box-shadow: 0 0 10px #00ffff44;
+}
+
+@keyframes moveStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+/* Animated stars */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    opacity: 0.15;
+    animation: moveStars 60s linear infinite;
+    z-index: -1;
+}
 
 @font-face {
   font-family: "AmongUsFont";
@@ -14,9 +80,10 @@ body {
   max-width: 600px;
   margin: auto;
   padding: 20px;
-  background: white;
-  color: black;
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  color: white;
   transition: 0.3s;
+  overflow-x: hidden;
 }
 
 textarea {
@@ -33,16 +100,21 @@ textarea {
 }
 
 button {
+  transition: 0.3s;
+  background: #222;
+  color: white;
+  border: 1px solid #888;
   font-family: "AmongUsFont", Arial, sans-serif;
-}
-
-button {
   padding: 10px;
   cursor: pointer;
   margin: 5px 5px 5px 0;
+  margin-top: 10px;
 }
 
-
+button:hover {
+    background: #444;
+    transform: scale(1.05);
+}
 
 .controls {
   margin-bottom: 10px;
