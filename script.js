@@ -208,7 +208,7 @@ function newSusMessage() {
 
 function copyOutput(button) {
     const output =
-        document.getElementById("outputText").value;
+        document.getElementById("output").value;
 
     navigator.clipboard.writeText(output)
         .then(() => {
