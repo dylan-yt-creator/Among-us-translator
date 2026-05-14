@@ -206,13 +206,34 @@ function newSusMessage() {
     document.getElementById("susMessage").innerText = random;
 }
 
-function copyOutput() {
+function copyOutput(button) {
     const output =
-        document.getElementById("output").value;
+        document.getElementById("outputText").value;
 
-    navigator.clipboard.writeText(output);
+    navigator.clipboard.writeText(output)
+        .then(() => {
 
-    alert("Copied to clipboard!");
+            // Save original text
+            const originalText = button.innerText;
+
+            // Change button text
+            button.innerText = "✅ Copied!";
+
+            // Change back after 2 seconds
+            setTimeout(() => {
+                button.innerText = originalText;
+            }, 2000);
+
+        })
+        .catch((err) => {
+            console.error(err);
+
+            button.innerText = "❌ Try Again";
+
+            setTimeout(() => {
+                button.innerText = "📋 COPY";
+            }, 2000);
+        });
 }
 
 /* Character counter */
