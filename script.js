@@ -75,7 +75,7 @@ const reversePhrases = Object.fromEntries(
 let typingTimer;
 
 window.onload = () => {
-  const inputEl = document.getElementById("inputText");
+  const inputEl = document.getElementById("input");
 
   inputEl.addEventListener("input", () => {
     clearTimeout(typingTimer);
@@ -91,7 +91,7 @@ window.onload = () => {
 // 4. TRANSLATION FUNCTION
 // =========================
 function translateText() {
-  let input = document.getElementById("inputText").value;
+  let input = document.getElementById("input").value;
 
   const phraseDict = isReversed ? reversePhrases : phrases;
 
@@ -125,7 +125,7 @@ function translateText() {
     .join(" ");
 
   // IMPORTANT: using textarea → .value
-  document.getElementById("outputText").value = translated;
+  document.getElementById("output").value = translated;
 }
 
 
@@ -133,8 +133,8 @@ function translateText() {
 // 5. TOGGLE DIRECTION + SWAP
 // =========================
 function toggleDirection() {
-  const inputEl = document.getElementById("inputText");
-  const outputEl = document.getElementById("outputText");
+  const inputEl = document.getElementById("input");
+  const outputEl = document.getElementById("output");
 
   // Swap text
   const temp = inputEl.value;
