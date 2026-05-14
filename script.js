@@ -188,3 +188,50 @@ function speakText() {
 // Load saved theme
 const savedTheme = localStorage.getItem("theme") || "system";
 applyTheme(savedTheme);
+
+const susMessages = [
+    "Red is kinda sus...",
+    "Emergency meeting!",
+    "Blue vented in electrical.",
+    "Who took my tasks?",
+    "Green was not the impostor.",
+    "Trust nobody.",
+    "Pink is following me..."
+];
+
+function newSusMessage() {
+    const random =
+        susMessages[Math.floor(Math.random() * susMessages.length)];
+
+    document.getElementById("susMessage").innerText = random;
+}
+
+function copyOutput() {
+    const output =
+        document.getElementById("output").value;
+
+    navigator.clipboard.writeText(output);
+
+    alert("Copied to clipboard!");
+}
+
+/* Character counter */
+const inputBox = document.getElementById("input");
+
+inputBox.addEventListener("input", () => {
+    document.getElementById("charCount").innerText =
+        "Characters: " + inputBox.value.length;
+});
+
+/* Text to speech */
+function speakOutput() {
+    const text =
+        document.getElementById("output").value;
+
+    const speech = new SpeechSynthesisUtterance(text);
+
+    speech.rate = 0.8;
+    speech.pitch = 0.5;
+
+    speechSynthesis.speak(speech);
+}
