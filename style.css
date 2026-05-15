@@ -78,7 +78,6 @@ textarea {
 body {
   font-family: "AmongUsFont", Arial, sans-serif;
   max-width: 600px;
-  padding: 20px;
   background: radial-gradient(circle at top, #111 0%, #000 70%);
   color: white;
   transition: 0.3s;
