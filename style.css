@@ -82,6 +82,8 @@ body {
   background: radial-gradient(circle at top, #111 0%, #000 70%);
   color: white;
   transition: 0.3s;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
