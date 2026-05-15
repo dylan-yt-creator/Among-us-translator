@@ -27,7 +27,7 @@ textarea {
     padding: 15px;
     border: 2px solid #666;
     background: rgba(255,255,255,0.03);
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     animation: glow 2s infinite alternate;
 }
@@ -38,7 +38,7 @@ textarea {
     padding: 10px;
     border: 2px solid #555;
     background: rgba(255,255,255,0.05);
-    width: fit-content;
+    width: 100%;
     box-shadow: 0 0 10px #00ffff44;
 }
 
