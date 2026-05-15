@@ -91,8 +91,8 @@ body {
   transition: 0.3s;
 
   margin: 0;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 15px;
+  padding-right: 100px;
   padding-top: 20px;
 
   overflow-x: hidden;
