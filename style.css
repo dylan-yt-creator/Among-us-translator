@@ -96,7 +96,7 @@ body {
   padding-top: 20px;
 
   overflow-x: hidden;
-  max-width: 600px;
+  max-width: 600vm;
 }
 
 textarea {
