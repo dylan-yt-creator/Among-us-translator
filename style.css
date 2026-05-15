@@ -92,11 +92,10 @@ body {
 
   margin: 0;
   padding-left: 15px;
-  padding-right: 50%;
+  padding-right: 65%;
   padding-top: 20px;
 
   overflow-x: hidden;
-  max-width: 600vm;
 }
 
 textarea {
