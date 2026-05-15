@@ -34,8 +34,8 @@ textarea {
 
 /* Info panel */
 .info-panel {
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: 25px;
+    padding: 15px;
     border: 2px solid #555;
     background: rgba(255,255,255,0.05);
     width: 100%;
