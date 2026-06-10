@@ -27,17 +27,15 @@ textarea {
 
 /* Tips section */
 .tips {
-    margin-top: 25px;
+    width: 800px;      /* choose any size you like */
+    max-width: 90%;
+    margin: 25px auto;
+
     padding: 15px;
-    line-height: 1.8;
-    font-size: 24px;
     border: 2px solid #666;
     background: rgba(255,255,255,0.03);
 
-    width: 100%;
-
     box-sizing: border-box;
-    line-height: 1.8;
     animation: glow 2s infinite alternate;
 
     font-size: 24px;
@@ -106,7 +104,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  align-item: center;
+  align-items: center;
 }
 
 textarea {
